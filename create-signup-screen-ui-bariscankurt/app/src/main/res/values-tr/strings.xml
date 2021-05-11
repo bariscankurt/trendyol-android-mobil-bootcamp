@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Succulent Shop</string>
+    <string name="email">Eposta</string>
+    <string name="username">Kullanıcı Adı</string>
+    <string name="email_or_username">Eposta veya Kullanıcı Adı</string>
+    <string name="password">Şifre</string>
+    <string name="log_in">Giriş yap</string>
+    <string name="sign_up">Kayıt ol</string>
+    <string name="create_an_account">Hesap oluştur</string>
+    <string name="already_have_an_account">Zaten hesabınız var mı?</string>
+    <string name="this_field_is_required">Bu alan zorunludur.</string>
+    <string name="identifier_is_too_short">Identifier is too short.</string>
+    <string name="email_is_invalid">Email hatalı.</string>
+    <string name="email_is_required">Email gerekiyor.</string>
+    <string name="username_is_required">Kullanıcı adı gerekiyor.</string>
+    <string name="username_can_only_include">Kullanıcı adı sadece a-z, 0-9 ve _ karakterlerini içerebilir.</string>
+    <string name="username_is_too_short">Kullanıcı adı çok kısa.</string>
+    <string name="username_is_too_long">Kullanıcı adı çok uzun.</string>
+    <string name="password_is_required">Şifre gerekiyor.</string>
+    <string name="password_is_too_short">Şifre çok kısa.</string>
+    <string name="password_is_too_long">Şifre çok uzun.</string>
+    <string name="password_must_contains">Şifre mutlaka bir rakam, bir büyük harf, bir küçük harf ve bir sembol içermelidir.</string>
+</resources>

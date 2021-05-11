@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/plant1"
+            />
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="20sp"
+            android:textColor="@color/title_text_color"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintEnd_toStartOf="@id/endGuideline"
+            tools:text="Small decorative succulent pot hanger"
+            />
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="0dp"
+            android:layout_marginTop="11dp"
+            android:textSize="14sp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/description_text_color"
+            app:layout_constraintTop_toBottomOf="@id/titleText"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintEnd_toStartOf="@id/endGuideline"
+            tools:text="Decorate your walls with this beatiful and functional pot hanger. You can place your cactus and succulent plants and let them enhance the look of your room. With the color options you can make your room more alive than ever!"
+            />
+        <TextView
+            android:id="@+id/priceText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/descriptionText"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintEnd_toStartOf="@id/endGuideline"
+            android:textColor="@color/price_text_color"
+            android:layout_marginTop="12dp"
+            tools:text="$14.50"
+            android:textSize="14sp"
+            />
+        <Button
+            android:id="@+id/addToCartButton"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            app:layout_constraintTop_toBottomOf="@id/priceText"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintEnd_toStartOf="@id/endGuideline"
+            android:text="@string/add_to_cart"
+            android:layout_marginTop="16dp"
+            />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/startGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp"
+            />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/endGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp"
+            />
+        <TextView
+            android:id="@+id/relateds"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_marginTop="22dp"
+            app:layout_constraintTop_toBottomOf="@id/addToCartButton"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintEnd_toEndOf="@id/endGuideline"
+            android:text="@string/related_products"
+            android:textColor="@color/title_text_color"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:paddingBottom="11dp"
+            app:layout_constraintTop_toBottomOf="@id/relateds"
+            app:layout_constraintStart_toStartOf="@id/startGuideline"
+            app:layout_constraintEnd_toEndOf="@id/endGuideline"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
+

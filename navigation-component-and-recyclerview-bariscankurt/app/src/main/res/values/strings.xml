@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Succulent Shop</string>
+    <string name="email">Email</string>
+    <string name="username">Username</string>
+    <string name="email_or_username">Email or Username</string>
+    <string name="password">Password</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="create_an_account">Create an account</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="this_field_is_required">This field is required.</string>
+    <string name="identifier_is_too_short">Identifier is too short.</string>
+    <string name="email_is_invalid">Email is invalid.</string>
+    <string name="email_is_required">Email is required</string>
+    <string name="username_is_required">Username is required.</string>
+    <string name="username_can_only_include">Username can only include a-z, 0-9 and _ characters.</string>
+    <string name="username_is_too_short">Username is too short.</string>
+    <string name="username_is_too_long">Username is too long</string>
+    <string name="password_is_required">Password is required.</string>
+    <string name="password_is_too_short">Password is too short.</string>
+    <string name="password_is_too_long">Password is too long.</string>
+    <string name="password_must_contains">Password must contain one digit, one uppercase letter, one lowercase letter and one special character.</string>
+    <string name="add_to_cart">Add to cart</string>
+    <string name="related_products">Related products:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
