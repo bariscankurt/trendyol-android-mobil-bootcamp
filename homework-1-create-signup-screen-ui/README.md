@@ -1,3 +1,16 @@
 ## Succulent Shop
 
-[Figma Link](https://www.figma.com/file/aKFn9Czmk2ms2hqp4sctcw/Succulent-Shop?node-id=0%3A1)
+### Homework 1 - Create Signup Screen UI
+
+For this homework, i've created a singup screen ui according to what i've learned from that week's lectures.
+
+Includes:
+
+* Client side validation for different cases such as:
+  * Email
+  * Password
+  * Username
+* Signup screen UI according to Figma schemes
+* Separation of validator classes from Activity class
+
+![Created UI](https://i.imgur.com/efQ6agV.png)
