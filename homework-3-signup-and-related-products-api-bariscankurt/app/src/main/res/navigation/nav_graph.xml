@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/openingRouterFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="school.cactus.succulentshop.login.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/loginToSignUp"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/nav_graph" />
+        <action
+            android:id="@+id/loginToProductList"
+            app:destination="@id/productListFragment"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="school.cactus.succulentshop.signup.SignUpFragment"
+        android:label="SignUpFragment">
+        <action
+            android:id="@+id/signUpToLogin"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph" />/>
+        <action
+            android:id="@+id/signUpToProductList"
+            app:destination="@id/productListFragment"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/productListFragment"
+        android:name="school.cactus.succulentshop.product.list.ProductListFragment"
+        android:label="ProductListFragment">
+        <action
+            android:id="@+id/productListToProductDetail"
+            app:destination="@id/productDetailFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/toLoginFragment"
+        app:destination="@id/loginFragment"
+        app:popUpTo="@id/nav_graph" />
+
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="school.cactus.succulentshop.product.detail.ProductDetailFragment"
+        android:label="ProductDetailFragment">
+        <action
+            android:id="@+id/productDetailToSelf"
+            app:destination="@id/productDetailFragment">
+            <argument
+                android:name="productId"
+                android:defaultValue="-1"
+                app:argType="integer" />
+        </action>
+        <argument
+            android:name="productId"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/productDetailToImageViewer"
+            app:destination="@id/imageViewerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/openingRouterFragment"
+        android:name="school.cactus.succulentshop.StartFragment"
+        android:label="OpeningRouterFragment">
+        <action
+            android:id="@+id/startToLogin"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph" />
+        <action
+            android:id="@+id/startToProductList"
+            app:destination="@id/productListFragment"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/imageViewerFragment"
+        android:name="school.cactus.succulentshop.product.ImageViewerFragment"
+        android:label="ImageViewerFragment">
+        <argument
+            android:name="originalResImageUrl"
+            android:defaultValue="-1"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
