@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="school.cactus.succulentshop.product.detail.ProductDetailViewModel" />
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:constraint_referenced_ids="imageView,titleText,
+                descriptionText,priceText,addToCartButton,recyclerView"
+                app:showProductDetail="@{viewModel.isProductLoaded}"
+                app:showRelatedProducts="@{viewModel.isRelatedProductsLoaded}" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:onClick="@{() -> viewModel.openZoomableScreen()}"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{viewModel.product.highResImageUrl}"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/plant1" />
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{viewModel.product.title}"
+                android:textColor="@color/title_text_color"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/imageView"
+                tools:text="Cactus plant w/ flowers in a cup" />
+
+            <TextView
+                android:id="@+id/descriptionText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@{viewModel.product.description}"
+                android:textColor="@color/description_text_color"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/titleText"
+                tools:text="Decorate your walls with this beatiful and functional pot hanger. You can place your cactus and succulent plants and let them enhance the look of your room. With the color options you can make your room more alive than ever!" />
+
+            <TextView
+                android:id="@+id/priceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@{viewModel.product.price}"
+                android:textColor="@color/price_text_color"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/descriptionText"
+                tools:text="$12.90" />
+
+            <Button
+                android:id="@+id/addToCartButton"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/add_to_cart"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/priceText" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/startGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/endGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <TextView
+                android:id="@+id/relateds"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="@string/related_products"
+                android:textColor="@color/title_text_color"
+                android:textSize="14sp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/addToCartButton" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:orientation="horizontal"
+                android:paddingBottom="11dp"
+                app:itemClickListener="@{viewModel.itemClickListener}"
+                app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/endGuideline"
+                app:layout_constraintStart_toStartOf="@id/startGuideline"
+                app:layout_constraintTop_toBottomOf="@id/relateds"
+                app:relatedProducts="@{viewModel.products}"
+                app:spanCount="1"
+                tools:listitem="@layout/related_product" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progressIndicator"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:indeterminate="true"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:showProductDetailLoading="@{viewModel.isProductLoaded}"
+                app:showRelatedProductLoading="@{viewModel.isRelatedProductsLoaded}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
